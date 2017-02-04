@@ -1,8 +1,6 @@
 carousel {
     overflow: hidden;
     position: absolute;
-    max-height: 300px;
-    width: 440px;
 }
 .carousel {
     position: static !important;

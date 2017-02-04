@@ -34,14 +34,10 @@ footer {
 }
 
 .header-title {
-  height: 56px;
-  object-fit: contain;
-  text-align: center;
-  margin: 0 auto;
-  padding-top:10px;
+  padding-top: 15px;
+  margin-left: 50%;
 }
 
 .header-title img {
-    max-width:100%;
-    max-height:100%;
+    width: 167px;
 }
