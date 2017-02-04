@@ -73,7 +73,7 @@ h3 {
 .home-text-container p {
     width: 689px;
     height: 120px;
-    font-family: AlegreyaSans;
+    font-family: 'Alegreya Sans', sans-serif;
     font-size: 14px;
     font-weight: normal;
     font-style: normal;
@@ -81,4 +81,23 @@ h3 {
     line-height: 1.71;
     letter-spacing: normal;
     color: #382c19;
+}
+
+.btn-modal {
+    width: 222px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #382c19;
+}
+
+.btn-modal {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fffdf9;
 }

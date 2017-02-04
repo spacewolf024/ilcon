@@ -24,6 +24,28 @@
 
     <div class="home-text-container">
         <h3>Welcome to Il Coniglio</h3>
-        <p>We are very excited to bring Il Coniglio to you. Here, you’ll be immersed in a French/Italian amalgam, echoing old world comfort while advancing gastronomic technique and embracing monumental hybrid design. Matchlessly blurring the lines between kitchen and dining room, this interactive yet distinguished approach will uniquely fulfill your desire to be a part of the culinary experience while still feeling like an honored guest. Il Coniglio will showcase Chef Dirk’s state of the art cuisine in a shared environment, creating an untapped culture for casual fine dining.</p>
+        <p>We are very excited to bring Il Coniglio to you. 
+            Here, you’ll be immersed in a French/Italian amalgam, echoing old world comfort while advancing gastronomic technique and embracing monumental hybrid design. 
+            Matchlessly blurring the lines between kitchen and dining room, this interactive yet distinguished approach will uniquely fulfill your desire to be a part of the culinary experience while still feeling like an honored guest.
+            Il Coniglio will showcase Chef Dirk’s state of the art cuisine in a shared environment, creating an untapped culture for casual fine dining. 
+        </p>
+        <button class="btn btn-modal" (click)="lgModal.show()">Request Investor Information</button>
+ 
+        <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">Request Investment Information</h4>
+                <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            </div>
+            </div>
+        </div>
+        </div>
+
     </div>
 </div>

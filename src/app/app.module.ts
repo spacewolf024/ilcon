@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { CarouselModule } from 'ng2-bootstrap/carousel';
+import { ModalModule } from 'ng2-bootstrap/modal';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -24,7 +25,8 @@ import { ContactComponent } from './contact/contact.component';
     ReactiveFormsModule,
     HttpModule,
     RouterModule.forRoot(rootRouterConfig),
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [
   ],
