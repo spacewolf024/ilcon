@@ -7,9 +7,10 @@ body {
   height: 70px;
   background-color: #382c19;
 }
+
 footer {
     width: 100%;
-    height: 70px;
+    height: 100px;
     background-color: #382c19;
     position: fixed;
     margin-bottom: 0px;
@@ -29,20 +30,18 @@ footer {
     text-align: center;
     color: #fffdf9;
     margin: 0 auto;
-    padding-top: 20px;
+    padding-top: 35px;
 }
 
 .header-title {
   height: 56px;
   object-fit: contain;
-  font-family: 'Alegreya Sans', sans-serif;
-  font-size: 2em;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
   text-align: center;
   margin: 0 auto;
-  color: #fffdf9;
+  padding-top:10px;
+}
+
+.header-title img {
+    max-width:100%;
+    max-height:100%;
 }

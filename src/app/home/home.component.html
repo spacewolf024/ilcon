@@ -1,20 +1,29 @@
-<div class="main-content">
-  Placeholder: some shit will go here
-  <carousel (activeSlideChange)="activeSlideChange($event)">
-    <slide>
-        <img src="assets/images/img1.jpg" alt="First slide">
-    </slide>
-    <slide>
-        <img src="assets/images/img2.jpg" alt="Second slide">
-    </slide>
-    <slide>
-        <img src="assets/images/img3.jpg" alt="Third slide">
-    </slide>
-    <slide> 
-        <img src="assets/images/img5.jpg" alt="Fourth slide">
-    </slide>
-    <slide>
-        <img src="assets/images/img6.jpg" alt="Fifth slide">
-    </slide>
-</carousel>
+<div id="home-content">
+    <div class="side-logo">
+        <img src="assets/images/rabbit.png" alt="Rabbit">
+    </div>
+    <div id="carousel-container">
+        <carousel (activeSlideChange)="activeSlideChange($event)">
+            <slide>
+                <img src="assets/images/img1.jpg" alt="First slide">
+            </slide>
+            <slide>
+                <img src="assets/images/img2.jpg" alt="Second slide">
+            </slide>
+            <slide>
+                <img src="assets/images/img3.jpg" alt="Third slide">
+            </slide>
+            <slide> 
+                <img src="assets/images/img5.jpg" alt="Fourth slide">
+            </slide>
+            <slide>
+                <img src="assets/images/img6.jpg" alt="Fifth slide">
+            </slide>
+        </carousel>
+    </div>
+
+    <div class="home-text-container">
+        <h3>Welcome to Il Coniglio</h3>
+        <p>We are very excited to bring Il Coniglio to you. Here, you’ll be immersed in a French/Italian amalgam, echoing old world comfort while advancing gastronomic technique and embracing monumental hybrid design. Matchlessly blurring the lines between kitchen and dining room, this interactive yet distinguished approach will uniquely fulfill your desire to be a part of the culinary experience while still feeling like an honored guest. Il Coniglio will showcase Chef Dirk’s state of the art cuisine in a shared environment, creating an untapped culture for casual fine dining.</p>
+    </div>
 </div>

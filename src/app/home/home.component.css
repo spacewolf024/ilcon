@@ -1,17 +1,22 @@
 carousel {
-    width: 435px;
     overflow: hidden;
     position: absolute;
     max-height: 300px;
-    max-width: 411px;
+    width: 440px;
 }
 .carousel {
     position: static !important;
+    height: 246px;
 }
 
 img {
     max-width:100%;
     max-height:100%;
+}
+
+.carousel img {
+    width: 440px;
+    display: block;
 }
 
 .carousel.slide {
@@ -26,4 +31,56 @@ img {
 .carousel-control .icon-next,
 .carousel-control .icon-prev {
     font-size: 50px !important;
+}
+
+#home-content {
+    margin-top: 43px;
+}
+
+#carousel-content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.side-logo {
+    float:left;
+    margin-left: 12%;
+    width: 15%;
+    margin-right: 50px;
+}
+
+.side-logo img {
+    max-width: 10%;
+    min-width: 200px;
+}
+
+h3 {
+    width: 316px;
+    height: 43px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #382c19;
+
+}
+.home-text-container {
+    float: right;
+    clear: both;
+}
+
+.home-text-container p {
+    width: 689px;
+    height: 120px;
+    font-family: AlegreyaSans;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #382c19;
 }
