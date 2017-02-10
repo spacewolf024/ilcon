@@ -9,78 +9,75 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <style>
-  body {
-    margin-bottom: 50px;
-}
 
-.header {
-  width: 100%;
-  height: 70px;
-  background-color: #382c19;
-}
-
-footer {
+  .load-header {
     width: 100%;
-    height: 100px;
+    height: 70px;
     background-color: #382c19;
-    position: fixed;
-    margin-bottom: 0px;
-    bottom: 0px;
-}
+  }
 
-.footer-text {
-    width: 689px;
-    height: 24px;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 12px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 2;
-    letter-spacing: normal;
-    text-align: center;
-    color: #fffdf9;
-    margin: 0 auto;
-    padding-top: 35px;
-}
+  .load-footer {
+      width: 100%;
+      height: 100px;
+      background-color: #382c19;
+      position: fixed;
+      margin-bottom: 0px;
+      bottom: 0px;
+  }
 
-.header-title {
-  padding-top: 15px;
-  margin-left: 50%;
-}
+  .footer-text {
+      width: 689px;
+      height: 24px;
+      font-family: 'Alegreya Sans', sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 2;
+      letter-spacing: normal;
+      text-align: center;
+      color: #fffdf9;
+      margin: 0 auto;
+      padding-top: 35px;
+  }
 
-.header-title img {
-    width: 167px;
-}
+  .header-title {
+    padding-top: 15px;
+    margin-left: 50%;
+  }
 
-h4 {
-    width: 316px;
-    height: 43px;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #382c19;
+  .header-title img {
+      width: 167px;
+  }
 
-}
+  h4 {
+      width: 316px;
+      height: 43px;
+      font-family: 'Alegreya Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      color: #382c19;
 
-.loading-content {
-    margin-left: 45%;
-    margin-top: 50px;
-}
-.loading-content img {
-    margin-left: 17%;
-    width: 75px;
-    margin-top: 25px;
-}
+  }
+
+  .loading-content {
+      margin-left: 45%;
+      margin-top: 50px;
+  }
+  .loading-content img {
+      margin-left: 17%;
+      width: 75px;
+      margin-top: 25px;
+  }
 </style>
   <body>
 
     <app>
-      <div class=header>
+      <div class="load-header">
         <div class="header-title">
           <img src="assets/images/header_logo.png">
         </div>
@@ -89,7 +86,7 @@ h4 {
         <h4>Loading Content...</h4>
         <img style="margin-left: 10%;" src="assets/images/ripple.svg">
       </div>
-      <footer>
+      <footer class="load-footer">
         <p class="footer-text">&copy;2017 Il Coniglio | 312 555 1234 | info@ilconiglio.com</p>
       </footer>
     </app>

@@ -2,9 +2,11 @@ carousel {
     overflow: hidden;
     position: absolute;
 }
+
 .carousel {
-    position: static !important;
-    height: 246px;
+    /*position: static !important;*/
+    height: 300px;
+    width: 600px;
 }
 
 img {
@@ -13,7 +15,7 @@ img {
 }
 
 .carousel img {
-    width: 440px;
+    width: 600px;
     display: block;
 }
 
@@ -35,9 +37,10 @@ img {
     margin-top: 43px;
 }
 
-#carousel-content {
+#carousel-container {
     margin-left: auto;
     margin-right: auto;
+    width: 1000px;
 }
 
 .side-logo {
@@ -66,11 +69,13 @@ h3 {
 
 }
 .home-text-container {
-    float: right;
-    clear: both;
+    clear:left;
+    margin-left: 30%;
+    height:auto;
+    padding-bottom: 50px;
 }
 
-.home-text-container p {
+ p {
     width: 689px;
     height: 120px;
     font-family: 'Alegreya Sans', sans-serif;
@@ -88,6 +93,11 @@ h3 {
     height: 40px;
     border-radius: 2px;
     background-color: #382c19;
+    margin-top: 10px;
+}
+
+.btn.focus, .btn:focus, .btn:hover {
+    color: #382c19 !important;
 }
 
 .btn-modal {
@@ -100,4 +110,75 @@ h3 {
     letter-spacing: normal;
     text-align: center;
     color: #fffdf9;
+}
+
+.modal-text {
+    width: 90%;
+    margin-left: 30px;
+    height: 50px;
+}
+
+.btn-cancel {
+    margin-left: 30px;
+    margin-right: 10px;
+    width: 120px;
+    height: 40px;
+    background-color: #ffffff;
+    border: solid 1px #382c19;
+    border-radius: 2px;
+    font-size: 14px;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #382c19;
+
+}
+
+.btn-submit {
+    width: 120px;
+    height: 40px;
+    background-color: #382c19;
+    border: solid 1px #fffdf9;
+    border-radius: 2px;
+    font-size: 14px;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #ffffff;
+
+}
+
+input {
+    width: 270px;
+    height: 40px;
+    border: solid 1px rgba(56, 44, 24, 0.2);
+    border-radius: 2px;
+}
+
+.btn-row {
+    margin-top: 15px;
+}
+
+label {
+    width: 270px;
+    height: 24px;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #382c19;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: -1px;
+}
+
+form {
+    margin-left: 30px;
+}
+
+textarea {
+    width: 476px;
+    height: 99px;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #382c19;
+    line-height: 1.71;
+    font-size: 14px;
+}
+
+.email-form {
+    margin-bottom: 30px;
 }

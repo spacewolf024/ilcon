@@ -20,13 +20,15 @@
                 <img src="assets/images/img6.jpg" alt="Fifth slide">
             </slide>
         </carousel>
+        
     </div>
 
     <div class="home-text-container">
         <h3>Welcome to Il Coniglio</h3>
         <p>We are very excited to bring Il Coniglio to you. 
             Here, you’ll be immersed in a French/Italian amalgam, echoing old world comfort while advancing gastronomic technique and embracing monumental hybrid design. 
-            Matchlessly blurring the lines between kitchen and dining room, this interactive yet distinguished approach will uniquely fulfill your desire to be a part of the culinary experience while still feeling like an honored guest.
+            Matchlessly blurring the lines between kitchen and dining room,
+            this interactive yet distinguished approach will uniquely fulfill your desire to be a part of the culinary experience while still feeling like an honored guest.
             Il Coniglio will showcase Chef Dirk’s state of the art cuisine in a shared environment, creating an untapped culture for casual fine dining. 
         </p>
         <button class="btn btn-modal" (click)="lgModal.show()">Request Investor Information</button>
@@ -43,9 +45,98 @@
                     </div>
 
                     <div class="modal-body">
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                    </div>
+                        <p class="modal-text">We appreciate your interest and look forward to talking with you.
+                            Please give us your current contact information and we will speak soon.
+                        </p>
+                        <form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+                            <label>
+                                <span>First Name</span><br>
+                                <input type="text" formControlName="firstName">
+                            </label><br>
+                            <div class="error" *ngIf="user.get('firstName').touched && user.get('firstName').hasError('required')">
+                                Name is required
+                            </div>
+                            <div class="error" *ngIf="user.get('firstName').touched && user.get('firstName').hasError('minlength')">
+                                Minimum of 2 characters
+                            </div>
 
+                            <label>
+                                <span>Last Name</span><br>
+                                <input type="text" formControlName="lastName">
+                            </label><br>
+                            <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('required')">
+                                Name is required
+                            </div>
+                            <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('minlength')">
+                                Minimum of 2 characters
+                            </div>
+
+                             <label>
+                                <span>Phone Number</span><br>
+                                <input type="tel" formControlName="phone">
+                            </label><br>
+                            <div class="error" *ngIf="user.get('phone').touched && user.get('phone').hasError('required')">
+                                Phone is required
+                            </div>
+                            <div class="error" *ngIf="user.get('phone').touched && user.get('phone').hasError('minlength')">
+                            </div>
+                            
+                            <div class="email-form" formGroupName="account">
+                                <label>
+                                    <span>Email address</span><br>
+                                <input type="email" formControlName="email">
+                                </label><br>
+                                <div
+                                class="error"
+                                *ngIf="user.get('account').get('email').hasError('required') && user.get('account').get('email').touched">
+                                Email is required
+                                </div>
+                                <label>
+                                <span>Confirm address</span><br>
+                                <input type="email" formControlName="confirm">
+                                </label><br>
+                                <div
+                                class="error"
+                                *ngIf="user.get('account').get('confirm').hasError('required') && user.get('account').get('confirm').touched">
+                                Confirming email is required
+                                </div>
+                            </div>
+
+                            <label>Any Questions or Comments</label><br>
+                            <textarea formControlName="comments" cols="40" rows="5"></textarea>
+
+                            <button type="submit" class="btn-cancel" (click)="lgModal.hide()">Cancel</button>
+                            <button type="submit" class="btn-submit" [disabled]="user.invalid">Send</button>
+                        </form>
+                        <!--<form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+                            <div class="form-group">
+                                <label>First Name</label><br>
+                                <input  type="text" formControlName="firstName"><br>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label><br>
+                                <input type="text" formControlName="lastName"><br>
+                            </div>-->
+                            <!--<label for="lastName">Last Name</label><br>
+                            <input type="text" name="lastName" required [(ngModel)]="model.lastName"><br>
+                            <label for="email">Email Address</label><br>
+                            <input type="text" name="email" [(ngModel)]="model.email"><br>
+                            <label for="telephone">Phone Number</label><br>
+                            <input type="tel" name="telephone" [(ngModel)]="model.telephone"><br>
+                            <label for="comments">Any Questions or Comments</label><br>
+                            <textarea name="comments" for="comments" cols="40" rows="5"></textarea>-->
+
+                           
+
+                           
+
+                        <!--</form>
+                        <div class="btn-row">
+                            <div class="form-group">
+                                <button class="btn-cancel" (click)="lgModal.hide()">Cancel</button>
+                                <button class="btn-submit" type="submit">Send</button>
+                            </div>-->
+                    </div>
                 </div>
             </div>
         </div>
