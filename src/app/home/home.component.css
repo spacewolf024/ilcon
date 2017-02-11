@@ -1,12 +1,13 @@
 carousel {
     overflow: hidden;
-    position: absolute;
+    /*position: absolute;*/
 }
 
 .carousel {
     /*position: static !important;*/
     height: 300px;
-    width: 600px;
+    max-width: 600px;
+    width: auto;
 }
 
 img {
@@ -14,9 +15,13 @@ img {
     max-height:100%;
 }
 
-.carousel img {
-    width: 600px;
+.carousel-img {
+    max-width: 600px;
+    width: auto;
+    height: 300px;
     display: block;
+    background-size: cover;
+    background-position: 0px 0px;
 }
 
 .carousel.slide {
@@ -33,26 +38,26 @@ img {
     font-size: 50px !important;
 }
 
-#home-content {
-    margin-top: 43px;
+@media screen and (max-width: 767px) {
+    #home-content {
+        margin: 20px 10px;
+    }
 }
 
-#carousel-container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 1000px;
+
+@media screen and (min-width: 768px) {
+    #home-content {
+        margin: 40px 10%;
+    }
 }
 
-.side-logo {
-    float:left;
-    margin-left: 12%;
-    width: 211px;
-    margin-right: 50px;
-}
 
 .side-logo img {
-    max-width: 10%;
-    min-width: 200px;
+    /*max-width: 10%;
+    min-width: 200px;*/
+    max-height: 500px;
+    margin: auto;
+    display: block;
 }
 
 h3 {
@@ -69,15 +74,16 @@ h3 {
 
 }
 .home-text-container {
-    clear:left;
+    /*clear:left;
     margin-left: 30%;
     height:auto;
-    padding-bottom: 50px;
+    padding-bottom: 50px;*/
+    /*padding-right: 40px;*/
 }
 
  p {
-    width: 689px;
-    height: 120px;
+    /*width: 689px;*/
+    /*height: 120px;*/
     font-family: 'Alegreya Sans', sans-serif;
     font-size: 14px;
     font-weight: normal;

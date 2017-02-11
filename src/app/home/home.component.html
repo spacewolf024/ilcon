@@ -1,114 +1,111 @@
-<div id="home-content">
-    <div class="side-logo">
+<div id="home-content" class="row">
+    <div class="side-logo hidden-xs col-sm-4">
         <img src="assets/images/rabbit.png" alt="Rabbit">
     </div>
-    <div id="carousel-container">
-        <carousel (activeSlideChange)="activeSlideChange($event)">
-            <slide>
-                <img src="assets/images/img1.jpg" alt="First slide">
-            </slide>
-            <slide>
-                <img src="assets/images/img2.jpg" alt="Second slide">
-            </slide>
-            <slide>
-                <img src="assets/images/img3.jpg" alt="Third slide">
-            </slide>
-            <slide> 
-                <img src="assets/images/img5.jpg" alt="Fourth slide">
-            </slide>
-            <slide>
-                <img src="assets/images/img6.jpg" alt="Fifth slide">
-            </slide>
-        </carousel>
-        
-    </div>
+    <div class="col-xs-12 col-sm-8">
+        <div id="carousel-container">
+            <carousel (activeSlideChange)="activeSlideChange($event)">
+                <slide>
+                    <div class="carousel-img" style="background-image: url(assets/images/img1.jpg)"></div>
+                </slide>
+                <slide>
+                    <div class="carousel-img" style="background-image: url(assets/images/img2.jpg)"></div>
+                </slide>
+                <slide>
+                    <div class="carousel-img" style="background-image: url(assets/images/img3.jpg)"></div>
+                </slide>
+                <slide>
+                    <div class="carousel-img" style="background-image: url(assets/images/img5.jpg)"></div>
+                </slide>
+                <slide>
+                    <div class="carousel-img" style="background-image: url(assets/images/img6.jpg)"></div>
+                </slide>
+            </carousel>
 
-    <div class="home-text-container">
-        <h3>Welcome to Il Coniglio</h3>
-        <p>We are very excited to bring Il Coniglio to you. 
-            Here, you’ll be immersed in a French/Italian amalgam, echoing old world comfort while advancing gastronomic technique and embracing monumental hybrid design. 
-            Matchlessly blurring the lines between kitchen and dining room,
-            this interactive yet distinguished approach will uniquely fulfill your desire to be a part of the culinary experience while still feeling like an honored guest.
-            Il Coniglio will showcase Chef Dirk’s state of the art cuisine in a shared environment, creating an untapped culture for casual fine dining. 
-        </p>
-        <button class="btn btn-modal" (click)="lgModal.show()">Request Investor Information</button>
- 
-        <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    
-                    <div class="modal-header">
-                        <h4 class="modal-title pull-left">Request Investment Information</h4>
-                        <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+        </div>
+        <div class="home-text-container">
+            <h3>Welcome to Il Coniglio</h3>
+            <p>We are very excited to bring Il Coniglio to you. Here, you’ll be immersed in a French/Italian amalgam, echoing
+                old world comfort while advancing gastronomic technique and embracing monumental hybrid design. Matchlessly
+                blurring the lines between kitchen and dining room, this interactive yet distinguished approach will uniquely
+                fulfill your desire to be a part of the culinary experience while still feeling like an honored guest. Il
+                Coniglio will showcase Chef Dirk’s state of the art cuisine in a shared environment, creating an untapped
+                culture for casual fine dining.
+            </p>
+            <button class="btn btn-modal" (click)="lgModal.show()">Request Investor Information</button>
+
+            <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h4 class="modal-title pull-left">Request Investment Information</h4>
+                            <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
-                    </div>
+                        </div>
 
-                    <div class="modal-body">
-                        <p class="modal-text">We appreciate your interest and look forward to talking with you.
-                            Please give us your current contact information and we will speak soon.
-                        </p>
-                        <form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
-                            <label>
+                        <div class="modal-body">
+                            <p class="modal-text">We appreciate your interest and look forward to talking with you. Please give us your current
+                                contact information and we will speak soon.
+                            </p>
+                            <form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+                                <label>
                                 <span>First Name</span><br>
                                 <input type="text" formControlName="firstName">
                             </label><br>
-                            <div class="error" *ngIf="user.get('firstName').touched && user.get('firstName').hasError('required')">
-                                Name is required
-                            </div>
-                            <div class="error" *ngIf="user.get('firstName').touched && user.get('firstName').hasError('minlength')">
-                                Minimum of 2 characters
-                            </div>
+                                <div class="error" *ngIf="user.get('firstName').touched && user.get('firstName').hasError('required')">
+                                    Name is required
+                                </div>
+                                <div class="error" *ngIf="user.get('firstName').touched && user.get('firstName').hasError('minlength')">
+                                    Minimum of 2 characters
+                                </div>
 
-                            <label>
+                                <label>
                                 <span>Last Name</span><br>
                                 <input type="text" formControlName="lastName">
                             </label><br>
-                            <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('required')">
-                                Name is required
-                            </div>
-                            <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('minlength')">
-                                Minimum of 2 characters
-                            </div>
+                                <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('required')">
+                                    Name is required
+                                </div>
+                                <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('minlength')">
+                                    Minimum of 2 characters
+                                </div>
 
-                             <label>
+                                <label>
                                 <span>Phone Number</span><br>
                                 <input type="tel" formControlName="phone">
                             </label><br>
-                            <div class="error" *ngIf="user.get('phone').touched && user.get('phone').hasError('required')">
-                                Phone is required
-                            </div>
-                            <div class="error" *ngIf="user.get('phone').touched && user.get('phone').hasError('minlength')">
-                            </div>
-                            
-                            <div class="email-form" formGroupName="account">
-                                <label>
+                                <div class="error" *ngIf="user.get('phone').touched && user.get('phone').hasError('required')">
+                                    Phone is required
+                                </div>
+                                <div class="error" *ngIf="user.get('phone').touched && user.get('phone').hasError('minlength')">
+                                </div>
+
+                                <div class="email-form" formGroupName="account">
+                                    <label>
                                     <span>Email address</span><br>
                                 <input type="email" formControlName="email">
                                 </label><br>
-                                <div
-                                class="error"
-                                *ngIf="user.get('account').get('email').hasError('required') && user.get('account').get('email').touched">
-                                Email is required
-                                </div>
-                                <label>
+                                    <div class="error" *ngIf="user.get('account').get('email').hasError('required') && user.get('account').get('email').touched">
+                                        Email is required
+                                    </div>
+                                    <label>
                                 <span>Confirm address</span><br>
                                 <input type="email" formControlName="confirm">
                                 </label><br>
-                                <div
-                                class="error"
-                                *ngIf="user.get('account').get('confirm').hasError('required') && user.get('account').get('confirm').touched">
-                                Confirming email is required
+                                    <div class="error" *ngIf="user.get('account').get('confirm').hasError('required') && user.get('account').get('confirm').touched">
+                                        Confirming email is required
+                                    </div>
                                 </div>
-                            </div>
 
-                            <label>Any Questions or Comments</label><br>
-                            <textarea formControlName="comments" cols="40" rows="5"></textarea>
+                                <label>Any Questions or Comments</label><br>
+                                <textarea formControlName="comments" cols="40" rows="5"></textarea>
 
-                            <button type="submit" class="btn-cancel" (click)="lgModal.hide()">Cancel</button>
-                            <button type="submit" class="btn-submit" [disabled]="user.invalid">Send</button>
-                        </form>
-                        <!--<form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+                                <button type="submit" class="btn-cancel" (click)="lgModal.hide()">Cancel</button>
+                                <button type="submit" class="btn-submit" [disabled]="user.invalid">Send</button>
+                            </form>
+                            <!--<form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
                             <div class="form-group">
                                 <label>First Name</label><br>
                                 <input  type="text" formControlName="firstName"><br>
@@ -126,16 +123,17 @@
                             <label for="comments">Any Questions or Comments</label><br>
                             <textarea name="comments" for="comments" cols="40" rows="5"></textarea>-->
 
-                           
 
-                           
 
-                        <!--</form>
+
+
+                            <!--</form>
                         <div class="btn-row">
                             <div class="form-group">
                                 <button class="btn-cancel" (click)="lgModal.hide()">Cancel</button>
                                 <button class="btn-submit" type="submit">Send</button>
                             </div>-->
+                        </div>
                     </div>
                 </div>
             </div>
