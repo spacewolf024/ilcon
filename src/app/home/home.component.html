@@ -3,22 +3,23 @@
         <img src="assets/images/rabbit.png" alt="Rabbit">
     </div>
     <div class="col-xs-12 col-sm-8">
+
         <div id="carousel-container">
             <carousel (activeSlideChange)="activeSlideChange($event)">
                 <slide>
-                    <div class="carousel-img" style="background-image: url(assets/images/img1.jpg)"></div>
+                    <div class="carousel-img" style="background-image: url(assets/images/1.png)"></div>
                 </slide>
                 <slide>
-                    <div class="carousel-img" style="background-image: url(assets/images/img2.jpg)"></div>
+                    <div class="carousel-img" style="background-image: url(assets/images/2.png)"></div>
                 </slide>
                 <slide>
-                    <div class="carousel-img" style="background-image: url(assets/images/img3.jpg)"></div>
+                    <div class="carousel-img" style="background-image: url(assets/images/3.png)"></div>
                 </slide>
                 <slide>
-                    <div class="carousel-img" style="background-image: url(assets/images/img5.jpg)"></div>
+                    <div class="carousel-img" style="background-image: url(assets/images/4.png)"></div>
                 </slide>
                 <slide>
-                    <div class="carousel-img" style="background-image: url(assets/images/img6.jpg)"></div>
+                    <div class="carousel-img" style="background-image: url(assets/images/5.png)"></div>
                 </slide>
             </carousel>
 
@@ -34,7 +35,7 @@
             </p>
             <button class="btn btn-modal" (click)="lgModal.show()">Request Investor Information</button>
 
-            <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" (onHide)="onHide($event)">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
 
@@ -66,7 +67,7 @@
                                 <input type="text" formControlName="lastName">
                             </label><br>
                                 <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('required')">
-                                    Name is required
+                                    Last Name is required
                                 </div>
                                 <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('minlength')">
                                     Minimum of 2 characters
@@ -80,29 +81,33 @@
                                     Phone is required
                                 </div>
                                 <div class="error" *ngIf="user.get('phone').touched && user.get('phone').hasError('minlength')">
+                                    Please input phone number XXX-XXX-XXXX
                                 </div>
-
-                                <div class="email-form" formGroupName="account">
+ 
+                                <div class="email-form">
                                     <label>
                                     <span>Email address</span><br>
                                 <input type="email" formControlName="email">
                                 </label><br>
-                                    <div class="error" *ngIf="user.get('account').get('email').hasError('required') && user.get('account').get('email').touched">
+                                    <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched">
                                         Email is required
                                     </div>
-                                    <label>
-                                <span>Confirm address</span><br>
+                                </div>
+                                    <!--<label>-->
+                                <!--<span>Confirm address</span><br>
                                 <input type="email" formControlName="confirm">
                                 </label><br>
-                                    <div class="error" *ngIf="user.get('account').get('confirm').hasError('required') && user.get('account').get('confirm').touched">
-                                        Confirming email is required
+                                    <div class="error" *ngIf="user.get('account').get('email') !== user.get('account').get('confirm') && user.get('account').get('confirm').touched">
+                                        Confirming email is required or does not match Email Address
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <label>Any Questions or Comments</label><br>
                                 <textarea formControlName="comments" cols="40" rows="5"></textarea>
+                                <br>
+                                <br>
 
-                                <button type="submit" class="btn-cancel" (click)="lgModal.hide()">Cancel</button>
+                                <button type="submit" class="btn-cancel" (click)="lgModal.hide();onCancel()">Cancel</button>
                                 <button type="submit" class="btn-submit" [disabled]="user.invalid">Send</button>
                             </form>
                             <!--<form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">

@@ -103,7 +103,7 @@ h3 {
 }
 
 .btn.focus, .btn:focus, .btn:hover {
-    color: #382c19 !important;
+    color: #fffdf9 !important;
 }
 
 .btn-modal {
@@ -136,6 +136,11 @@ h3 {
     font-family: 'Alegreya Sans', sans-serif;
     color: #382c19;
 
+}
+
+.error {
+    color: red;
+    padding-top: 10px;
 }
 
 .btn-submit {

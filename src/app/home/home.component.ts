@@ -1,7 +1,12 @@
-import { Component, ViewEncapsulation, OnInit }      from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, ViewChild, ElementRef }      from '@angular/core';
 import { CarouselConfig } from 'ng2-bootstrap';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../User';
+import { Headers, RequestOptions, Http, Response } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
+import { ModalDirective } from 'ng2-bootstrap/modal';
+
+
 
 @Component({
   selector: 'home',
@@ -10,31 +15,68 @@ import { User } from '../User';
   templateUrl: './home.component.html',
   providers: [{provide: CarouselConfig, useValue: {interval: 4000, noPause: false}}]
 })
+
 export class HomeComponent implements OnInit {
+
   user: FormGroup;
-  constructor() {}
+  UserObject = {
+    'firstName': '',
+    'lastName': '',
+    'email': '',
+    'phone': '',
+    'comments': ''
+  }
+  emailError: boolean = false;
+  @ViewChild('lgModal') public childModal:ModalDirective;
+
+
+  constructor(private http: Http) {}
+
+
   ngOnInit() {
+    this.createNewUser();
+  }
+
+  
+
+  createNewUser(): void {
     this.user = new FormGroup({
       firstName: new FormControl('', [Validators.required, Validators.minLength(2)]),
       lastName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      phone: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      account: new FormGroup({
-        email: new FormControl('', Validators.required),
-        confirm: new FormControl('', Validators.required)
-      }),
+      phone: new FormControl('', [Validators.required, Validators.minLength(10)]),
+      email: new FormControl('', Validators.required),
       comments: new FormControl('')
     });
   }
   
-  activeSlideChange() {
+  activeSlideChange(ndex) {
+    console.log(ndex);
+  }
 
+  onHide() {
+    this.createNewUser();
   }
 
   onSubmit({ value, valid }: { value: User, valid: boolean }) {
     console.log(value, valid);
-    console.log('confirm: ', value.account.confirm);
-    console.log('email: ', value.account.email);
-    console.log(this.validateEmail(value.account.email));
+    if(valid) {
+
+      this.UserObject.firstName = value.firstName;
+      this.UserObject.lastName = value.lastName;
+      this.UserObject.email = value.email;
+      this.UserObject.phone = value.phone;
+      this.UserObject.comments = value.comments;
+      this.addUser();
+      this.childModal.hide();
+      
+    }
+  }
+  hide() {
+
+  }
+
+  onCancel(): void {
+    this.createNewUser();
   }
 
   validateEmail(c) {
@@ -46,4 +88,44 @@ export class HomeComponent implements OnInit {
       }
     };
   }
+
+  // addUser (user: User) Observable<User> {
+  //   let headers = new Headers({ 'Content-Type': 'application/json' });
+  //   let options = new RequestOptions({ headers: headers });
+
+  //   return this.http.post('/scripts/request.php', { user }, options)
+  //                   .map(this.extractData)
+  //                   .catch(this.handleError);
+  // }
+
+addUser (): Promise<User> {
+  let headers = new Headers({ 'Content-Type': 'application/json' });
+  let options = new RequestOptions({ headers: headers });
+  console.log(this.UserObject);
+  
+  return this.http.post('/scripts/request.php', this.UserObject, options)
+             .toPromise()
+             .then(this.extractData)
+             .catch(this.handleError);
+}
+
+private extractData(res: Response) {
+  let body = res.json();
+  return body.data || { };
+}
+
+private handleError (error: Response | any) {
+  // In a real world app, we might use a remote logging infrastructure
+  let errMsg: string;
+  if (error instanceof Response) {
+    const body = error.json() || '';
+    const err = body.error || JSON.stringify(body);
+    errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+  } else {
+    errMsg = error.message ? error.message : error.toString();
+  }
+  console.error(errMsg);
+  return Promise.reject(errMsg);
+}
+
 }

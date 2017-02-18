@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var webpackMerge = require('webpack-merge');
 const AssetsPlugin = require('assets-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 // Webpack Config
 var webpackConfig = {
@@ -22,7 +23,10 @@ var webpackConfig = {
       {
         // your Angular Async Route paths relative to this root directory
       }
-    )
+    ),
+    new UglifyJSPlugin({
+      compress: true
+    })
   ],
 
   module: {
