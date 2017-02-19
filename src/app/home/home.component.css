@@ -5,8 +5,8 @@ carousel {
 
 .carousel {
     /*position: static !important;*/
-    height: 300px;
-    max-width: 600px;
+    height: 246px;
+    max-width: 689px;
     width: auto;
 }
 
@@ -16,16 +16,16 @@ img {
 }
 
 .carousel-img {
-    max-width: 600px;
+    max-width: 689px;
     width: auto;
-    height: 300px;
+    height: 246px;
     display: block;
     background-size: cover;
     background-position: 0px 0px;
 }
 
 .carousel.slide {
-    max-height: 300px;
+    max-height: 246px;
 }
 .carousel-indicators {
     display: none;
