@@ -21,7 +21,65 @@
     }
 }
 
-.about-box {
+.chckbx {
+    object-fit: contain;
+    font-family: 'FontAwesome';
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #382c19;
+}
+
+.chckbx-txt {
+    padding-left: 5px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #382c19;
+}
+.error {
+    color: red;
+    padding-top: 14px;
+    font-size: 14px;
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+
+.date-title {
+    padding-left: 5px;
+    margin-left: 70px;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #382c19;
+}
+
+.date {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #382c19;
+}
+
+input[type="checkbox"]{
+  width: 20px; 
+  height: 15px; 
+  cursor: pointer;
 }
 
 .download-box {
@@ -32,7 +90,7 @@
 
 .nda-title {
     padding-top: 12px;
-    font-family: AlegreyaSans;
+    font-family: 'Alegreya Sans', sans-serif;
     font-size: 20px;
     font-weight: 500;
     font-style: normal;

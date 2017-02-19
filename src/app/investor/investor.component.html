@@ -18,14 +18,58 @@
         </div>
         <div class="col-xs-12 col-sm-4">
             <div class="download-box">
-            <p class="nda-title">Investor Information</p>
-            <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
-                nisl ut aliquip.
-            </p>
-            <button class="btn btn-download center-block">Download Investor Pack</button>
+                <p class="nda-title">Investor Information</p>
+                <p>
+                    We are currently seeking partners to join us in this exciting endeavor. Please download our investors package below. In it
+                    you will find financial projections, sample menus, decor examples, and information about why we are so
+                    passionate about this restaurant.
+                </p>
+                <button class="btn btn-download center-block" (click)="lgModal.show()">Download Investor Pack</button>
+
+                <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+                    (onHide)="onHide($event)">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title pull-left">Il Coniglio Non Disclosure Agreement</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <p class="modal-text">I need some copy here Andy!!!
+                                </p>
+                                <div>
+                                    <input type="checkbox" name="nda" value="agree" class="chkbx"><span class="chckbx-txt">I agree to the terms and conditions</span>
+                                    <span class="date-title">Today's Date:</span><span class="date"> {{today | date:'shortDate'}}</span>
+                                </div>
+                                <form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+                                    <label>
+                                    <span>First & Last Name</span><br>
+                                    <input type="text" formControlName="name">
+                                </label><br>
+                                    <div class="error" *ngIf="user.get('name').touched && user.get('name').hasError('required')">
+                                        Name is required
+                                    </div>
+                                    <div class="error" *ngIf="user.get('name').touched && user.get('name').hasError('minlength')">
+                                        Minimum of 2 characters
+                                    </div>
+
+                                    <div class="email-form">
+                                        <label>
+                                        <span>Email address</span><br>
+                                    <input type="email" formControlName="email">
+                                    </label><br>
+                                        <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched">
+                                            Email is required
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
+</div>
 </div>
