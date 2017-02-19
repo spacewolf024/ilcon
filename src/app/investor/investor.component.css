@@ -25,6 +25,7 @@
 
 .download-box {
     margin-top: 20px;
+    padding: 0px 20px 12px;
     background-color: #F9F6F2;
 }
 
@@ -38,4 +39,14 @@
     line-height: normal;
     letter-spacing: normal;
     color: #382c19;
+}
+
+.btn-download {
+    border-radius: 2px;
+    background-color: #382c19;
+    color: #fffdf9;
+}
+
+.btn.focus, .btn:focus, .btn:hover {
+    color: #fffdf9 !important;
 }
