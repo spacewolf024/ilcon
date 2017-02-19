@@ -51,7 +51,6 @@ img {
     }
 }
 
-
 .side-logo img {
     /*max-width: 10%;
     min-width: 200px;*/
@@ -60,39 +59,6 @@ img {
     display: block;
 }
 
-h3 {
-    width: 316px;
-    height: 43px;
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 36px;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #382c19;
-
-}
-.home-text-container {
-    /*clear:left;
-    margin-left: 30%;
-    height:auto;
-    padding-bottom: 50px;*/
-    /*padding-right: 40px;*/
-}
-
- p {
-    /*width: 689px;*/
-    /*height: 120px;*/
-    font-family: 'Alegreya Sans', sans-serif;
-    font-size: 14px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.71;
-    letter-spacing: normal;
-    color: #382c19;
-}
 
 .btn-modal {
     width: 222px;
@@ -108,7 +74,6 @@ h3 {
 
 .btn-modal {
     font-size: 14px;
-    font-weight: bold;
     font-family: 'Alegreya Sans', sans-serif;
     font-style: normal;
     font-stretch: normal;
@@ -129,18 +94,19 @@ h3 {
     margin-right: 10px;
     width: 120px;
     height: 40px;
-    background-color: #ffffff;
+    background-color: #fffdf9;
     border: solid 1px #382c19;
     border-radius: 2px;
     font-size: 14px;
     font-family: 'Alegreya Sans', sans-serif;
     color: #382c19;
-
 }
 
 .error {
     color: red;
-    padding-top: 10px;
+    padding-top: 14px;
+    font-size: 14px;
+    font-family: 'Alegreya Sans', sans-serif;
 }
 
 .btn-submit {
@@ -151,8 +117,19 @@ h3 {
     border-radius: 2px;
     font-size: 14px;
     font-family: 'Alegreya Sans', sans-serif;
-    color: #ffffff;
+    color: #fffdf9;;
+}
 
+.btn-close {
+    width: 120px;
+    height: 40px;
+    margin-left: 400px;
+    background-color: #382c19;
+    border: solid 1px #fffdf9;
+    border-radius: 2px;
+    font-size: 14px;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #fffdf9;;
 }
 
 input {

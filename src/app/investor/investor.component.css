@@ -1,0 +1,42 @@
+#investor-content {
+    margin-top: 43px;
+    margin-bottom: 25px;
+}
+
+#investor-content img {
+    display: block;
+    margin:auto;
+}
+
+@media screen and (max-width: 767px) {
+    #investor-content {
+        margin: 20px 10px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    #investor-content {
+        margin: 40px 10%;
+    }
+}
+
+.about-box {
+    float:left;
+}
+
+.download-box {
+    opacity: 0.03;
+    background-color: #382c19;
+}
+
+.nda-title {
+    font-family: AlegreyaSans;
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #382c19;
+}

@@ -25,7 +25,8 @@ var webpackConfig = {
       }
     ),
     new UglifyJSPlugin({
-      compress: true
+      compress: true,
+      comments: false
     })
   ],
 

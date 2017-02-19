@@ -6,18 +6,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { CarouselModule } from 'ng2-bootstrap/carousel';
+import { InvestorComponent } from './investor/investor.component';
 import { ModalModule } from 'ng2-bootstrap/modal';
-import { AboutComponent } from './about/about.component';
+import { AllowComponent } from './allow/allow.component';
 import { HomeComponent } from './home/home.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AboutComponent,
+    AllowComponent,
     HomeComponent,
-    ContactComponent
+    InvestorComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +29,9 @@ import { ContactComponent } from './contact/contact.component';
     ModalModule.forRoot()
   ],
   providers: [
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [ AppComponent,  ]
 })
 export class AppModule {
 

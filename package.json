@@ -40,6 +40,7 @@
     "codelyzer": "~2.0.0-beta.4",
     "css-loader": "^0.26.0",
     "raw-loader": "^0.5.1",
+    "rimraf": "~2.5.4",
     "to-string-loader": "^1.1.4",
     "tslint": "~4.4.2",
     "typescript": "~2.0.10",

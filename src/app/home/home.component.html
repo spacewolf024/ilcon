@@ -34,114 +34,103 @@
                 culture for casual fine dining.
             </p>
             <button class="btn btn-modal" (click)="lgModal.show()">Request Investor Information</button>
-
-            <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" (onHide)="onHide($event)">
+            <!-- Info Modal-->
+            <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true"
+                (onHide)="onHide($event)">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
+                        <div *ngIf="modalRequest">
+                            <div class="modal-header">
+                                <h4 class="modal-title pull-left">Request Investment Information</h4>
+                            </div>
 
-                        <div class="modal-header">
-                            <h4 class="modal-title pull-left">Request Investment Information</h4>
-                            <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
+                            <div class="modal-body">
+                                <p class="modal-text">We appreciate your interest and look forward to talking with you. Please give us your current
+                                    contact information and we will speak soon.
+                                </p>
+                                <form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+                                    <label>
+                                    <span>First Name</span><br>
+                                    <input type="text" formControlName="firstName">
+                                </label><br>
+                                    <div class="error" *ngIf="user.get('firstName').touched && user.get('firstName').hasError('required')">
+                                        Name is required
+                                    </div>
+                                    <div class="error" *ngIf="user.get('firstName').touched && user.get('firstName').hasError('minlength')">
+                                        Minimum of 2 characters
+                                    </div>
+
+                                    <label>
+                                    <span>Last Name</span><br>
+                                    <input type="text" formControlName="lastName">
+                                </label><br>
+                                    <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('required')">
+                                        Last Name is required
+                                    </div>
+                                    <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('minlength')">
+                                        Minimum of 2 characters
+                                    </div>
+
+                                    <label>
+                                    <span>Phone Number</span><br>
+                                    <input type="tel" formControlName="phone">
+                                </label><br>
+                                    <div class="error" *ngIf="user.get('phone').touched && user.get('phone').hasError('required')">
+                                        Phone is required
+                                    </div>
+                                    <div class="error" *ngIf="user.get('phone').touched && user.get('phone').hasError('minlength')">
+                                        Please input phone number XXX-XXX-XXXX
+                                    </div>
+
+                                    <div class="email-form">
+                                        <label>
+                                        <span>Email address</span><br>
+                                    <input type="email" formControlName="email">
+                                    </label><br>
+                                        <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched">
+                                            Email is required
+                                        </div>
+                                    </div>
+
+                                    <label>Any Questions or Comments</label><br>
+                                    <textarea formControlName="comments" cols="40" rows="5"></textarea>
+                                    <br>
+                                    <br>
+
+                                    <button type="submit" class="btn-cancel" (click)="lgModal.hide();onCancel()">Cancel</button>
+                                    <button type="submit" class="btn-submit" [disabled]="user.invalid">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div *ngIf="modalSuccess">
+                            <div class="modal-header">
+                                <h4 class="modal-title pull-left">Your Information has been sent!</h4>
+                            </div>
+
+                            <div class="modal-body">
+                                <p class="modal-text">
+                                    Thank you for your interest in Il Coniglio. Some one will be getting in contact with you very soon. in the meantime please
+                                    feel free to visit our Facebook and Twitter pages for updates.
+                                </p>
+                                <button class="btn-close" (click)="lgModal.hide()">Close</button>
+                            </div>
                         </div>
 
-                        <div class="modal-body">
-                            <p class="modal-text">We appreciate your interest and look forward to talking with you. Please give us your current
-                                contact information and we will speak soon.
-                            </p>
-                            <form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
-                                <label>
-                                <span>First Name</span><br>
-                                <input type="text" formControlName="firstName">
-                            </label><br>
-                                <div class="error" *ngIf="user.get('firstName').touched && user.get('firstName').hasError('required')">
-                                    Name is required
-                                </div>
-                                <div class="error" *ngIf="user.get('firstName').touched && user.get('firstName').hasError('minlength')">
-                                    Minimum of 2 characters
-                                </div>
-
-                                <label>
-                                <span>Last Name</span><br>
-                                <input type="text" formControlName="lastName">
-                            </label><br>
-                                <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('required')">
-                                    Last Name is required
-                                </div>
-                                <div class="error" *ngIf="user.get('lastName').touched && user.get('lastName').hasError('minlength')">
-                                    Minimum of 2 characters
-                                </div>
-
-                                <label>
-                                <span>Phone Number</span><br>
-                                <input type="tel" formControlName="phone">
-                            </label><br>
-                                <div class="error" *ngIf="user.get('phone').touched && user.get('phone').hasError('required')">
-                                    Phone is required
-                                </div>
-                                <div class="error" *ngIf="user.get('phone').touched && user.get('phone').hasError('minlength')">
-                                    Please input phone number XXX-XXX-XXXX
-                                </div>
- 
-                                <div class="email-form">
-                                    <label>
-                                    <span>Email address</span><br>
-                                <input type="email" formControlName="email">
-                                </label><br>
-                                    <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched">
-                                        Email is required
-                                    </div>
-                                </div>
-                                    <!--<label>-->
-                                <!--<span>Confirm address</span><br>
-                                <input type="email" formControlName="confirm">
-                                </label><br>
-                                    <div class="error" *ngIf="user.get('account').get('email') !== user.get('account').get('confirm') && user.get('account').get('confirm').touched">
-                                        Confirming email is required or does not match Email Address
-                                    </div>
-                                </div>-->
-
-                                <label>Any Questions or Comments</label><br>
-                                <textarea formControlName="comments" cols="40" rows="5"></textarea>
-                                <br>
-                                <br>
-
-                                <button type="submit" class="btn-cancel" (click)="lgModal.hide();onCancel()">Cancel</button>
-                                <button type="submit" class="btn-submit" [disabled]="user.invalid">Send</button>
-                            </form>
-                            <!--<form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
-                            <div class="form-group">
-                                <label>First Name</label><br>
-                                <input  type="text" formControlName="firstName"><br>
+                        <div *ngIf="modalFail">
+                            <div class="modal-header">
+                                <h4 class="modal-title pull-left">There was an error sending your information</h4>
                             </div>
-                            <div class="form-group">
-                                <label>Last Name</label><br>
-                                <input type="text" formControlName="lastName"><br>
-                            </div>-->
-                            <!--<label for="lastName">Last Name</label><br>
-                            <input type="text" name="lastName" required [(ngModel)]="model.lastName"><br>
-                            <label for="email">Email Address</label><br>
-                            <input type="text" name="email" [(ngModel)]="model.email"><br>
-                            <label for="telephone">Phone Number</label><br>
-                            <input type="tel" name="telephone" [(ngModel)]="model.telephone"><br>
-                            <label for="comments">Any Questions or Comments</label><br>
-                            <textarea name="comments" for="comments" cols="40" rows="5"></textarea>-->
 
-
-
-
-
-                            <!--</form>
-                        <div class="btn-row">
-                            <div class="form-group">
-                                <button class="btn-cancel" (click)="lgModal.hide()">Cancel</button>
-                                <button class="btn-submit" type="submit">Send</button>
-                            </div>-->
+                            <div class="modal-body">
+                                <p class="modal-text">
+                                    Thank you for your interest in Il Coniglio. We apologize for the inconvience and ask that you try again later.
+                                </p>
+                                <button class="btn-close" (click)="lgModal.hide()">Close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
+</div>
 </div>
