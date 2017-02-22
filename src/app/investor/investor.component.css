@@ -21,6 +21,24 @@
     }
 }
 
+.nda-text-box {
+    max-height:400px;
+    overflow:auto;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.form-text {
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: #382c19;
+}
+
 .chckbx {
     object-fit: contain;
     font-family: 'FontAwesome';
@@ -31,6 +49,10 @@
     line-height: 1.71;
     letter-spacing: normal;
     color: #382c19;
+}
+
+.nda-date-box {
+    margin-bottom: 20px;
 }
 
 .chckbx-txt {
@@ -108,4 +130,30 @@ input[type="checkbox"]{
 
 .btn.focus, .btn:focus, .btn:hover {
     color: #fffdf9 !important;
+}
+
+.btn-submit {
+    width: 190px;
+    height: 40px;
+    background-color: #382c19;
+    border: solid 1px #fffdf9;
+    border-radius: 2px;
+    font-size: 14px;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #fffdf9;;
+}
+
+.btn-cancel {
+    width: 120px;
+    height: 40px;
+    background-color: #fffdf9;
+    border: solid 1px #382c19;
+    border-radius: 2px;
+    font-size: 14px;
+    font-family: 'Alegreya Sans', sans-serif;
+    color: #382c19;
+}
+
+.btn-row {
+    margin-top: 15px;
 }

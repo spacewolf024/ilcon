@@ -35,41 +35,149 @@
                             </div>
 
                             <div class="modal-body">
-                                <p class="modal-text">I need some copy here Andy!!!
-                                </p>
-                                <div>
-                                    <input type="checkbox" name="nda" value="agree" class="chkbx"><span class="chckbx-txt">I agree to the terms and conditions</span>
-                                    <span class="date-title">Today's Date:</span><span class="date"> {{today | date:'shortDate'}}</span>
+                                <div class="nda-text-box">
+                                    <p class="modal-text">
+
+                                        <b>THIS CONFIDENTIALITY AGREEMENT</b>, (the “Agreement”) is made and entered into
+                                        by and between <b>IL CONIGLIO, LLC, </b> an Illinois limited liability company (“IC”),
+                                        and ________________________________________, an individual (“Recipient”), as of
+                                        the date Recipient viewed the Agreement and electronically signed his or her name
+                                        thereto.<br> Recitals: A. Recipient has entered, or is interested in entering, into
+                                        discussions with IC regarding a potential investment in, or business transaction
+                                        with IC or an affiliate with the understanding that its relationship with IC will
+                                        be kept confidential as more fully set forth below. B. In the course of such discussions,
+                                        including in the course of performing a due diligence review of IC’s business plans
+                                        and in reviewing and working with IC on certain confidential business plans and strategies,
+                                        Recipient has had and will have access to Confidential Information (as hereinafter
+                                        defined). C. IC is not willing to continue or enter into discussions or a business
+                                        relationship with Recipient unless Recipient enters into this Agreement. THEREFORE,
+                                        in consideration of the premises set forth above, the promises and covenants herein
+                                        contained, and for other good and valuable consideration, the receipt and sufficiency
+                                        of which are hereby acknowledged, it is hereby agreed as follows: 1. Confidentiality.
+                                        (A) As used in this Agreement, the term “Confidential Information” shall mean and
+                                        include all confidential information, whether written, oral or otherwise, concerning
+                                        the businesses and affairs of IC or its affiliated or related entities or their customers
+                                        (the “Disclosing Entities”), including without limitation, business plans, concepts
+                                        and designs, strategic plans, marketing programs and plans, potential business names
+                                        and marks, research and development projects, financial statements and information,
+                                        identities of and relationships with suppliers, contractors and customers, trade
+                                        secrets, and other non-public aspects of any of the Disclosing Entities’ businesses
+                                        or affairs. The term “Confidential Information” does not include (x) information
+                                        that has become or hereafter becomes generally available to the public in a single
+                                        publication other than as a result of a disclosure by Recipient or any of its representatives,
+                                        (y) information that is furnished to Recipient on a non-confidential basis from a
+                                        source other than the Disclosing Entities that is not under any obligation of confidentiality
+                                        to the Disclosing Entities, or (z) information that is within the Recipient’s possession
+                                        prior to its being furnished to Recipient by a Disclosing Entity, as is demonstrated
+                                        by written records of Recipient. (B) Recipient acknowledges and agrees that the Disclosing
+                                        Entities have expended, or will expend, significant sums of money and have invested,
+                                        or will invest, a substantial amount of time to develop, use, and maintain the secrecy
+                                        of, the Confidential Information. The Disclosing Entities have thus obtained, or
+                                        will obtain, a valuable economic asset which has enabled, or will enable, them to
+                                        develop an extensive reputation and to establish long-term business relationships
+                                        with their suppliers and customers. If such Confidential Information were disclosed
+                                        to another person or used for the benefit of anyone other than the Disclosing Entities,
+                                        the Disclosing Entities would suffer irreparable harm, loss and damage. Accordingly,
+                                        Recipient acknowledges and agrees that: (i) the Confidential Information is, and
+                                        at all times hereafter shall remain, the sole property of the respective Disclosing
+                                        Entities, and nothing herein shall be construed to grant to Recipient any license
+                                        or other right or interest in any of the Confidential Information or any other property
+                                        of any of the Disclosing Entities; (ii) Recipient shall use its best efforts and
+                                        the utmost diligence to guard and protect the Confidential Information from any unauthorized
+                                        disclosure to any competitor, or any other person, other than to those of Recipient’s
+                                        employees necessary for purposes of the business relationship between Recipient and
+                                        IC who have agreed to keep such information confidential; (iii) unless IC gives Recipient
+                                        prior express written permission, during Recipient’s relationship with IC and thereafter,
+                                        other than as necessary for purposes of Recipient’s due diligence review of, and
+                                        working relationship with, IC, Recipient shall not use for its own benefit, or divulge
+                                        to any competitor, supplier or any other person, the Confidential Information which
+                                        Recipient may obtain as a result of Recipient’s discussions or relationship with
+                                        IC or any other Disclosing Entity; and (iv) Recipient shall disclose Confidential
+                                        Information only to its representatives (x) who need to know the Confidential Information
+                                        in order to assist Recipient in its due diligence review of, and in working with,
+                                        IC, (y) who are informed by Recipient of the confidential nature of the information
+                                        Recipient discloses to them and the terms of this agreement, and (z) who are instructed
+                                        by Recipient and agree to treat such information confidentially. (C) Recipient acknowledges
+                                        and agrees that all Confidential Information, regardless of its form, is supplied
+                                        or made available by IC to Recipient solely to assist Recipient in its due diligence
+                                        review and potential business relationship with IC. (D) Recipient also acknowledges
+                                        and agrees that, upon the termination of Recipient’s business relationship with IC
+                                        for any reason, Recipient shall immediately return to IC all documentary or tangible
+                                        Confidential Information in their possession, custody, or control, and not make or
+                                        keep any copies, notes, abstracts, summaries, tapes or other record of any type of
+                                        any of the Confidential Information. 2. Miscellaneous. (A) Recipient hereby acknowledges
+                                        that IC does not make and has not made any representation or warranty, either express
+                                        or implied, as to the accuracy or completeness of the Confidential Information and
+                                        agrees, to the fullest extent permitted by law, that IC shall have no liability to
+                                        Recipient on any basis (including, without limitation, in contract, tort, under federal
+                                        or state securities laws or otherwise) as a result of Recipient’s use of all or any
+                                        portion of the Confidential Information. (B) The validity, construction, and enforceability
+                                        of this Agreement shall be governed in all respects by the laws of State of Illinois.
+                                        (C) This Agreement may be executed in any one or more counterparts, each of which
+                                        shall constitute an original, no other counterpart needing to be produced, and all
+                                        of which, when taken together, shall constitute but one and the same instrument.
+                                        IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the date
+                                        contemplated above.
+
+                                    </p>
                                 </div>
-                                <form novalidate (ngSubmit)="onSubmit(user)" [formGroup]="user">
+                                <hr>
+                                <form novalidate (ngSubmit)="onSubmit(ndaUser)" [formGroup]="ndaUser">
+                                    <div class="nda-date-box">
+                                        <input type="checkbox" name="nda" value="agree" class="chkbx" (click)="chckbxClick()" formControlName="agreeCheck"><span
+                                            class="chckbx-txt">I agree to the terms and conditions</span>
+                                        <span class="date-title">Today's Date:</span><span class="date"> {{today | date:'shortDate'}}</span>
+                                        <div class="error" *ngIf="!agreeBtn && submitBtn">
+                                            Please Agree to the Terms and Conditions
+                                        </div>
+                                    </div>
+                                
                                     <label>
-                                    <span>First & Last Name</span><br>
-                                    <input type="text" formControlName="name">
-                                </label><br>
-                                    <div class="error" *ngIf="user.get('name').touched && user.get('name').hasError('required')">
+                                        <span class="form-text">First Name</span><br>
+                                        <input type="text" formControlName="firstName">
+                                    </label><br>
+                                    <div class="error" *ngIf="ndaUser.get('firstName').touched && ndaUser.get('firstName').hasError('required')">
                                         Name is required
                                     </div>
-                                    <div class="error" *ngIf="user.get('name').touched && user.get('name').hasError('minlength')">
-                                        Minimum of 2 characters
+                                    <div class="error" *ngIf="ndaUser.get('firstName').touched && ndaUser.get('firstName').hasError('minlength')">
+                                        Minimum of 5 characters
                                     </div>
+                                    <br>
+
+                                     <label>
+                                        <span class="form-text">Last Name</span><br>
+                                        <input type="text" formControlName="lastName">
+                                    </label><br>
+                                    <div class="error" *ngIf="ndaUser.get('lastName').touched && ndaUser.get('lastName').hasError('required')">
+                                        Name is required
+                                    </div>
+                                    <div class="error" *ngIf="ndaUser.get('lastName').touched && ndaUser.get('lastName').hasError('minlength')">
+                                        Minimum of 5 characters
+                                    </div>
+                                    <br>
 
                                     <div class="email-form">
                                         <label>
-                                        <span>Email address</span><br>
-                                    <input type="email" formControlName="email">
-                                    </label><br>
-                                        <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched">
+                                            <span class="form-text">Email Address</span><br>
+                                            <input type="email" formControlName="email" class="sd-form-control">
+                                        </label><br>
+                                        <div class="error" *ngIf="ndaUser.get('email').hasError('required') && ndaUser.get('email').touched">
                                             Email is required
                                         </div>
+                                        <div class="error" *ngIf="invalidEmail">
+                                            Email is not valid
+                                        </div>
+                                    </div>
+                                    <div class="btn-row">
+                                        <button type="submit" class="btn-cancel" (click)="lgModal.hide();onCancel()">Cancel</button>
+                                        <button type="submit" class="btn-submit" [disabled]="ndaUser.invalid">Get Download Link</button>
                                     </div>
                                 </form>
-
-
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>

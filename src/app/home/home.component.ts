@@ -27,12 +27,11 @@ export class HomeComponent implements OnInit {
     'email': '',
     'phone': '',
     'comments': ''
-  }
+  };
   emailError: boolean = false;
   @ViewChild('lgModal') public childModal: ModalDirective;
 
   constructor(private homeService: HomeService) { }
-
 
   ngOnInit() {
     this.createNewUser();

@@ -4,6 +4,4 @@ export interface User {
   phone: string;
   email: string;
   comments: string;
-  
-  
 }
