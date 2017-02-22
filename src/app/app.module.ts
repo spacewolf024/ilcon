@@ -10,6 +10,7 @@ import { InvestorComponent } from './investor/investor.component';
 import { ModalModule } from 'ng2-bootstrap/modal';
 import { AllowComponent } from './allow/allow.component';
 import { HomeComponent } from './home/home.component';
+import { DownloadComponent } from './download/download.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 @NgModule({
@@ -17,6 +18,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     AppComponent,
     AllowComponent,
     HomeComponent,
+    DownloadComponent,
     InvestorComponent
   ],
   imports: [

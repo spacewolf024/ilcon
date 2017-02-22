@@ -5,5 +5,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./allow.component.css'],
   templateUrl: './allow.component.html'
 })
-export class AllowComponent {
-}
+export class AllowComponent {}

@@ -58,7 +58,9 @@ export class InvestorComponent implements OnInit {
       this.investorObject.email = value.email;
       this.investorObject.id = this.getParameterByName('id');
       this.investorObject.valid  = this.getParameterByName('valid');
-      this.addUser();
+      (window as any).location = '/scripts/download.php' + '?firstName=' + this.investorObject.firstName + '&lastName=' + this.investorObject.lastName + '&email=' + this.investorObject.email 
+      + '&id=' + this.investorObject.id + '&valid=' + this.investorObject.valid;
+      // this.addUser();
 
     } else {
       this.invalidEmail = true;
